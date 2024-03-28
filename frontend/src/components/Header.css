@@ -1,0 +1,25 @@
+.header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 10px;
+
+  }
+  
+  .nav-link {
+    text-decoration: none;
+    color: #fff;
+    padding: 0 20px;
+  }
+  
+  .nav-link:hover {
+    color: #ddd;
+  }
+  
