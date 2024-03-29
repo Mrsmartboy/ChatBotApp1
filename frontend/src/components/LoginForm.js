@@ -48,32 +48,49 @@ function LoginForm() {
   return (
     <div className="container-login">
       <form className="login-form" onSubmit={handleSubmit}>
-        <h2 className='login-head'>Login</h2>
+        <h2 className='login-head'>Login Form</h2>
         <div className="form-group">
-          <label htmlFor="username">Email:</label>
+          <label htmlFor="email">Email:</label>
+          <div className='image-password-container'>
           <input
             type="text"
             id="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
+            placeholder='Enter Email'
+            autocomplete="off"
+            className='input-login'
+
           />
+                    <img src="\icons8-user-96.png" alt="password" className='user-icon' htmlFor='email'/>
+
+          </div>
         </div>
         <div className="form-group">
           <label htmlFor="password">Password:</label>
+          <div className='image-password-container'>
           <input
             type="password"
             id="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             required
+            placeholder='Enter password'
+            autocomplete="off"
+            className='input-login'
+          
           />
+          <img src="\icons8-password-48.png" alt="password" className='user-icon' htmlFor='password'/>
+          </div>
         </div>
-        <button type="submit">Login</button>
+        <p className='link-forgot-password' onClick={()=>navigate('/forgot-password')}>Forgot Password</p>
+
+        <button type="submit" className='login-button'>Login</button>
         <p>{errMsg}</p>
         <div className='login-register-forgot'>
-          <p className='link-register' onClick={()=>navigate('/signup')}>Register</p>
-          <p className='link-forgot-password' onClick={()=>navigate('/forgot-password')}>Forgot Password</p>
+        <p className='link-register' >Don't have an account <span onClick={()=>navigate('/signup')}>Register</span></p>
+
         </div>
       </form>
     </div>

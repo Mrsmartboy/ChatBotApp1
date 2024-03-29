@@ -26,6 +26,7 @@ function RegistrationForm() {
 
   return (
     <div className="registration-container">
+      <div className='register-container'>
       <h2 className='register-header'>Registration Form</h2>
       <form onSubmit={handleSubmit}>
         <div className="form-group">
@@ -36,6 +37,8 @@ function RegistrationForm() {
             value={firstName}
             onChange={(e) => setFirstName(e.target.value)}
             required
+            className='input-form'
+            autoComplete='off'
           />
         </div>
         <div className="form-group">
@@ -46,6 +49,10 @@ function RegistrationForm() {
             value={lastName}
             onChange={(e) => setLastName(e.target.value)}
             required
+            className='input-form'
+            autoComplete='off'
+
+
           />
         </div>
         <div className="form-group">
@@ -56,6 +63,8 @@ function RegistrationForm() {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
+            className='input-form'
+            autoComplete='off'
           />
         </div>
         <div className="form-group">
@@ -66,10 +75,12 @@ function RegistrationForm() {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             required
+            className='input-form'
           />
         </div>
-        <button type="submit">Register</button>
+        <button type="submit" className='button-register'>Register</button>
       </form>
+    </div>
     </div>
   );
 }

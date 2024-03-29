@@ -1,25 +1,37 @@
 
 .container-login {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: white;
     width: 100vw;
+    background-image: url('../../public/10619.jpg');
+     background-size: cover;
+    background-position: center;
   }
 
   .login-head{
     text-align: center;
+    color: #ccc;
+    font-size: 30px;
+    font-weight: bold;
+    font-family: cursive;
   }
   
   .login-form {
     width: 400px;
     padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: orange;
-  }
+    border: 3px solid #ccc;
+    border-radius: 25px;
+    background-color: transparent;
+   display: flex;
+   flex-direction: column;
+   cursor: pointer;
   
+  }
+
+ 
   .form-group {
     margin-bottom: 15px;
   }
@@ -27,34 +39,89 @@
   label {
     display: block;
     margin-bottom: 5px;
-  }
-  
-  input {
-    width: 100%;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 3px;
-  }
-  
-  button {
-    width: 100%;
-    padding: 10px;
-    border: none;
-    border-radius: 3px;
-    background-color: #007bff;
     color: #fff;
-    cursor: pointer;
-  }
-  
-  button:hover {
-    background-color: #0056b3;
+    font-size: 15px;
+    font-weight: bold;
+    font-family: cursive;
   }
 
-  .login-register-forgot{
+  .image-password-container{
+    border: 2px solid #fff;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    padding-right: 20px;
+    border-radius: 20px;
+    width: 90%;
+  }
+  
+  .input-login {
+    width: 100%;
+    padding: 8px;
+    border-radius: 8px;
+    background-color: transparent;
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: cursive;
+    outline: none;
+    border: none;
+    
+  }
+
+  /* Target specific input types */
+.input-login {
+  border: none;
+}
+
+.input-login {
+  border: none;
+}
+
+.user-icon{
+  width: 30px;
+  height: 30px;
+}
+
+
+
+
+  ::placeholder{
+    color: lightgray;
+    font-size: 15px;
+    font-weight: 300;
+    font-family: cursive;
+  }
+  
+  .login-button {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #fff;
+    border-radius: 3px;
+    background-color: transparent;
+    color: #fff;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: cursive;
+    border-radius: 20px;
+    align-self: center;
+  }
+
+  .login-button:hover{
+    background-color:orange;
+    border-radius: 20px;
+    transition:all .7s ease-in-out ;
+ 
+
+  }
+  
+
+
+  .login-register-forgot{
+    margin: 0px;
+    text-align: center;
   }
 
   .link-register,.link-forgot-password{
@@ -63,9 +130,38 @@
     font-weight: bold;
     font-family: cursive;
     cursor: pointer;
+   align-self: flex-end;
+   margin: 0px;
+   margin-bottom: 10px;
+   transition: color 0.5s ease-in-out;
+  }
+  .link-register{
+    margin: 0px;
+   
   }
 
-  .link-register:hover,.link-forgot-password:hover{
-    color: red;
+  
+
+ .link-forgot-password:hover{
+    color: orange;
+  }
+
+  span{
+    text-decoration: underline;
+  }
+
+  span:hover{
+   color: orange;
+  }
+
+  @media screen and (max-width:576px){
+      .login-form{
+        width: 200px;
+      }
+      .link-register,.link-forgot-password{
+        font-size: 0.8em;
+
+      }
+    
   }
   

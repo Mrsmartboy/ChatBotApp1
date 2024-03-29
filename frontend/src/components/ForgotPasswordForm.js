@@ -34,6 +34,7 @@ const ForgotPasswordForm = () => {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
+            className='forgot-email'
           />
         </div>
         <button type="submit">Reset Password</button>
