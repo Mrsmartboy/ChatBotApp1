@@ -20,7 +20,6 @@
   }
   
   .login-form {
-    width: 400px;
     padding: 20px;
     border: 3px solid #ccc;
     border-radius: 25px;
@@ -28,6 +27,7 @@
    display: flex;
    flex-direction: column;
    cursor: pointer;
+   margin: 20px;
   
   }
 
@@ -155,11 +155,9 @@
   }
 
   @media screen and (max-width:576px){
-      .login-form{
-        width: 200px;
-      }
+     
       .link-register,.link-forgot-password{
-        font-size: 0.8em;
+        font-size: 1em;
 
       }
     

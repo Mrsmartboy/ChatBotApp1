@@ -80,6 +80,7 @@ function RegistrationForm() {
         </div>
         <button type="submit" className='button-register'>Register</button>
       </form>
+      <p className='login-account'>If you have an account then <span onClick={()=>navigate('/login')}>Login</span></p>
     </div>
     </div>
   );
