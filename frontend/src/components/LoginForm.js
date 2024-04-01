@@ -63,7 +63,7 @@ function LoginForm() {
             className='input-login'
 
           />
-                    <img src="\icons8-user-96.png" alt="password" className='user-icon' htmlFor='email'/>
+         <img src="\icons8-user-96.png" alt="password" className='user-icon' htmlFor='email'/>
 
           </div>
         </div>
@@ -87,7 +87,7 @@ function LoginForm() {
         <p className='link-forgot-password' onClick={()=>navigate('/forgot-password')}>Forgot Password</p>
 
         <button type="submit" className='login-button'>Login</button>
-        <p>{errMsg}</p>
+        <p className='login-error'>{errMsg}</p>
         <div className='login-register-forgot'>
         <p className='link-register' >Don't have an account <span onClick={()=>navigate('/signup')}>Register</span></p>
 

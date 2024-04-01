@@ -162,4 +162,12 @@
       }
     
   }
+
+  .login-error{
+    color: rgba(245, 26, 26, 0.701);
+    font-size: 15px;
+    font-weight: 700;
+    font-family: cursive;
+
+  }
   
