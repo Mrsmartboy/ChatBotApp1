@@ -61,7 +61,7 @@ const sendResetEmail = (email, token) => {
     from: 'josephganjela@gmail.com',
     to: email,
     subject: 'Password Reset Request',
-    text: `To reset your password, please click on the following link: http://localhost:3004/reset-password/${token}`
+    text: `To reset your password, please click on the following link: http://localhost:3000/reset-password/${token}`
   };
 
   transporter.sendMail(mailOptions, (error, info) => {
@@ -108,7 +108,7 @@ app.post('/reset-password/:token', (req, res) => {
   if (!cleanedToken || !newPassword) {
     return res.status(400).send('Token and new password are required.');
   }
-
+console.log(token)
   // Check if token is valid and not expired
   const sql = `SELECT * FROM Users WHERE ResetToken = ? AND ResetTokenExpiry > NOW()`;
   db.query(sql, [cleanedToken], (err, results) => {
