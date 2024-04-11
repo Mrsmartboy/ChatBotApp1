@@ -20,7 +20,6 @@
   }
   
   .login-form {
-    width: 400px;
     padding: 20px;
     border: 3px solid #ccc;
     border-radius: 25px;
@@ -28,6 +27,7 @@
    display: flex;
    flex-direction: column;
    cursor: pointer;
+   margin: 20px;
   
   }
 
@@ -80,8 +80,9 @@
 }
 
 .user-icon{
-  width: 30px;
-  height: 30px;
+ color: #fff;
+ height: 20px;
+
 }
 
 
@@ -146,22 +147,35 @@
     color: orange;
   }
 
-  span{
+  .span-login{
     text-decoration: underline;
   }
 
-  span:hover{
+ .span-login:hover{
    color: orange;
   }
 
   @media screen and (max-width:576px){
-      .login-form{
-        width: 200px;
-      }
+     
       .link-register,.link-forgot-password{
-        font-size: 0.8em;
+        font-size: 1em;
 
       }
     
+  }
+
+  .login-error{
+    color: rgba(245, 26, 26, 0.701);
+    font-size: 15px;
+    font-weight: 700;
+    font-family: cursive;
+
+  }
+
+  .toggle-button{
+    background-color: transparent;
+    border: none;
+    outline: none;
+   color: #fff;
   }
   

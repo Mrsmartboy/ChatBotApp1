@@ -8,6 +8,16 @@ class MessageParser {
     const lowercase = message.toLowerCase();
     const careerKeywords = "jobs" || "job" || "career" || "career problems" || "career struggles"
     const familykeywords = "Family stress" || "family problems" || "family struggles" || "family depression";
+    const earnkeywords = "earn" && "more money" && "short time"
+    const expenseKeywords = "expenses" || "decrease"
+    const saveMoney = "save" || "money"
+    const debts = "decrease debts" && "debts" 
+    const reduceStress = "reduce" || "financial stress"
+    const increaseSalary = 'increase' && "salary"
+    const incomePlan = 'plan' || "monthly income"
+    const lowIncomePlan = 'survive' || "suffering" || 'low budget' || 'survive with low income' || 'budget' || "manage" || "home" || "low income" || "low expenses" 
+    const businessPlan = 'suggest' || 'ideas' || ('give' || 'business ideas') || ('business' || 'earn money') || 'give business ideas'
+    const recoverFinancial = "best ways" && "recover financial" && "financial" && "best way"
 
     if (lowercase.includes("hello") || lowercase.includes("hi") || lowercase.includes("helo") || lowercase.includes("hii") ||
     lowercase.includes("hey")
@@ -20,6 +30,41 @@ class MessageParser {
     else if (lowercase.indexOf(familykeywords)!==-1){
       this.actionProvider.handleFamilyProblems()
    }
+   else if(lowercase.indexOf(earnkeywords)!==-1){
+          this.actionProvider.earnMoneyAction()
+   }
+   else if(lowercase.indexOf(expenseKeywords)!==-1){
+    this.actionProvider.expensesAction()
+}
+
+else if(lowercase.indexOf(saveMoney)!==-1){
+  this.actionProvider.saveMoneyAction()
+}
+
+else if(lowercase.indexOf(debts)!==-1){
+  this.actionProvider.debtsAction()
+}
+else if(lowercase.indexOf(reduceStress)!==-1){
+  this.actionProvider.reduceStressAction()
+}
+
+else if(lowercase.indexOf(increaseSalary)!==-1){
+  this.actionProvider.increaseSalaryAction()
+}
+else if(lowercase.indexOf(incomePlan)!==-1){
+  this.actionProvider.incomePlanAction()
+}
+else if(lowercase.indexOf(lowIncomePlan)!==-1){
+  this.actionProvider.lowIncomePlanAction()
+}
+else if(lowercase.indexOf(businessPlan)!==-1){
+  this.actionProvider.businessPlanAction()
+}
+else if(lowercase.indexOf(recoverFinancial)!==-1){
+  this.actionProvider.recoverFinancialAction()
+}
+
+
 
     else if (lowercase.includes("good afternoon")|| lowercase.includes("goodafternoon")){
         this.actionProvider.afternoon();

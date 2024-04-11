@@ -44,16 +44,55 @@ const config = {
       props: {
         questions: [
           {
-            question: "What is closure?",
+           
             answer:
-              "Closure is a way for a function to retain access to it's enclosing function scope after the execution of that function is finished.",
+              "Break tasks into smaller steps.",
             id: 1,
           },
           {
-            question: "Explain prototypal inheritance",
             answer:
-              "Prototypal inheritance is a link between an object and an object store that holds shared properties. If a property is not found on the host object, javascript will check the prototype object.",
+              "Practice active learning.",
             id: 2,
+          },
+          {
+            answer:
+              "Set realistic goals.",
+            id: 3,
+          },
+          {
+            answer:
+              "Use relaxation techniques.",
+            id: 4,
+          },
+          {
+            answer:
+              "Stay organized with a study schedule.",
+            id: 5,
+          },
+          {
+            answer:
+              "Get enough sleep and eat well.",
+            id: 6,
+          },
+          {
+            answer:
+              "Stay positive and confident.",
+            id: 7,
+          },
+          {
+            answer:
+              "Seek support from friends and family.",
+            id: 8,
+          },
+          {
+            answer:
+              "Take breaks and stay active.",
+            id: 9,
+          },
+          {
+            answer:
+              "Practice mindfulness techniques.",
+            id: 10,
           },
         ],
       },

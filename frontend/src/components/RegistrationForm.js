@@ -10,6 +10,8 @@ function RegistrationForm() {
   const [lastName, setLastName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [sucessMsg,setSucessMsg] = useState('')
+  const [errMsg,setErrMsg] = useState('')
   const navigate = useNavigate()
   // Handle form submission
   const handleSubmit = (e) => { 
@@ -18,10 +20,22 @@ function RegistrationForm() {
    const values=  { firstName, lastName, email, password }
      axios.post('http://localhost:8081/signup',values)
      .then(res=>{
-      console.log(res)
-      navigate('/login')
+    
+     setSucessMsg(`Registration successful Then click on LoginForm And enter your credentials`)
+     setEmail('')
+     setFirstName('')
+     setLastName('')
+     setPassword('')
+     setErrMsg('')
+     
      })
-     .catch(err=>console.log(err))
+     .catch(err=>{
+       const {response}=err 
+       const {data} = response
+       const {message} = data 
+       setErrMsg(message)
+
+     })
   };
 
   return (
@@ -79,7 +93,10 @@ function RegistrationForm() {
           />
         </div>
         <button type="submit" className='button-register'>Register</button>
+        <p className='success-msg'>{sucessMsg}</p>
+        <p className='err-msg'>{errMsg}</p>
       </form>
+      <p className='login-account'>If you have an account then <span onClick={()=>navigate('/login')} className='span-signup'>Login</span></p>
     </div>
     </div>
   );

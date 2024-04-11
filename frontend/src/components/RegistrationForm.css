@@ -13,8 +13,7 @@ background-position: center;
 
   .register-container{
     border: 2px solid #fff;
-    width: 300px;
-    padding: 50px;
+    padding: 20px;
     padding-bottom: 50px;
     border-radius: 20px;
     margin: 20px;
@@ -25,6 +24,7 @@ background-position: center;
     color: #fff;
     font-size: 30px;
     font-family: cursive;
+    text-align: center;
 
   }
   
@@ -40,11 +40,11 @@ background-position: center;
   
   .input-form{
     width: 100%;
-    padding: 10px;
+    padding: 8px;
     border: 2px solid #ccc;
-    border-radius: 10px;
+    border-radius: 20px;
     box-sizing: border-box;
-    font-size: 20px;
+    font-size: 18px;
     margin-top: 5px;
     background-color: transparent;
     outline: none;
@@ -73,7 +73,6 @@ background-position: center;
 
   @media screen and (max-width:576px){
     .register-container{
-      width: 250px;
       padding: 30px;
       padding-bottom: 20px;
       padding-top: 20px;
@@ -81,4 +80,38 @@ background-position: center;
    
 }
 
-  
+.login-account{
+  color: #fff;
+  font-size: 20px;
+  font-weight: bold;
+  font-family: cursive;
+  text-align: center;
+}
+
+.span-signup{
+  cursor: pointer;
+  color: chocolate;
+  text-decoration: dashed;
+}
+.success-msg{
+  color: green;
+  font-size: 16px;
+  font-weight: bold;
+  font-family: cursive;
+  text-align: center;
+  width: 300px;
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+  .err-msg{
+    color: rgb(247, 4, 52);
+    font-size: 16px;
+    font-weight: bold;
+    font-family: cursive;
+    text-align: center;
+
+  }

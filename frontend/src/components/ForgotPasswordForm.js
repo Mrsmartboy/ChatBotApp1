@@ -24,7 +24,7 @@ const ForgotPasswordForm = () => {
   return (
     <div className='forgot-password-main-container'>
     <div className="forgot-password-form-container">
-      <h2>Forgot Password</h2>
+      <h2 className='forgot-head'>Forgot Password</h2>
       <form onSubmit={handleSubmit} className="forgot-password-form">
         <div className="form-group">
           <label htmlFor="email">Email:</label>
@@ -35,9 +35,11 @@ const ForgotPasswordForm = () => {
             onChange={(e) => setEmail(e.target.value)}
             required
             className='forgot-email'
+            autoComplete='off'
+            placeholder='Enter your Email'
           />
         </div>
-        <button type="submit">Reset Password</button>
+        <button type="submit" className='reset-button'>Reset Password</button>
         {message && <p className="message">{message}</p>}
         {error && <p className="error">{error}</p>}
       </form>

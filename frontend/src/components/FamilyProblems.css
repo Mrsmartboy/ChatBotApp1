@@ -1,11 +1,14 @@
 
 
-.list-container{
+.list-container-family{
+    justify-content: flex-start;
+    flex-direction: column;
     width: 70%;
 }
 
 .family-list-items{
 
  font-weight: 500;
-
+color: black;
+list-style-type: decimal;
 }

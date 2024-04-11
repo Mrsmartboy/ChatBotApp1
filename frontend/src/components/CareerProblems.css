@@ -1,11 +1,14 @@
 
 
-.list-container{
+.list-container-career{
+    justify-content: flex-start;
+    flex-direction: column;
     width: 70%;
-    padding: 10px;
 }
 
 .career-list-items{
  font-weight: 500;
 margin: 5px;
+color: black;
+list-style-type:decimal;
 }

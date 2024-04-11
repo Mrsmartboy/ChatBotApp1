@@ -27,7 +27,7 @@ const db = mysql.createConnection({
   host: 'localhost',
   user: 'root',
   password: '',
-  database: 'signup'
+  database: 'chatrbot'
 });
 
 // Connect
@@ -61,7 +61,7 @@ const sendResetEmail = (email, token) => {
     from: 'josephganjela@gmail.com',
     to: email,
     subject: 'Password Reset Request',
-    text: `To reset your password, please click on the following link: http://localhost:3004/reset-password/${token}`
+    text: `To reset your password, please click on the following link: http://localhost:3000/reset-password/${token}`
   };
 
   transporter.sendMail(mailOptions, (error, info) => {
@@ -144,28 +144,45 @@ app.post('/reset-password/:token', (req, res) => {
 
 
 app.post('/signup',(req,res)=>{
-  const sql = 'INSERT INTO users (firstName,lastName,email, password) VALUES (?)';
-  const password = req.body.password
-  bcrypt.hash(password.toString(),salt,(err,hash)=>{
-    if (err){
+  const checkUserExistsQuery = 'SELECT * FROM users WHERE email = ?';
+  const insertUserQuery = 'INSERT INTO users (firstName, lastName, email, password) VALUES (?, ?, ?, ?)';
+  
+  const password = req.body.password;
+
+  // Hash the password
+  bcrypt.hash(password.toString(), salt, (err, hash) => {
+    if (err) {
       return res.status(500).json({ message: 'Error registering user' });
     }
+
     const values = [
       req.body.firstName,
       req.body.lastName,
       req.body.email,
-      hash, 
-    ]
-    db.query(sql,[values],(err,data)=>{
+      hash
+    ];
+
+    // Check if the user already exists
+    db.query(checkUserExistsQuery, [req.body.email], (err, existingUser) => {
       if (err) {
         return res.status(500).json({ message: 'Error registering user' });
       }
-      res.status(201).json({ message: 'User registered successfully',data});
-    })
-  })  
- 
-  
-}) 
+
+      if (existingUser.length > 0) {
+        return res.status(400).json({ message: '*Email is already exists' });
+      }
+
+      // If the user doesn't exist, insert the new user
+      db.query(insertUserQuery, values, (err, data) => {
+        if (err) {
+          return res.status(500).json({ message: 'Error registering user' });
+        }
+        res.status(201).json({ message: 'User registered successfully', data });
+      });
+    });
+  });
+});
+
 
 
 
@@ -197,6 +214,22 @@ app.post('/login', (req, res) => {
       res.json("Fail")
     }
    
+  });
+});
+
+
+app.post('/contacts', (req, res) => {
+  const { fullName, email, phoneNumber, description } = req.body;
+  const INSERT_CONTACT_QUERY = `INSERT INTO contactdetails (FullName, Email, PhoneNumber, Description) VALUES (?, ?, ?, ?)`;
+  
+  db.query(INSERT_CONTACT_QUERY, [fullName, email, phoneNumber, description], (err, results) => {
+    if (err) {
+      console.error('Error adding contact: ', err);
+      res.status(500).send('Error adding contact');
+      return;
+    }
+    console.log('Contact added successfully');
+    res.status(201).send('Contact added successfully');
   });
 });
 

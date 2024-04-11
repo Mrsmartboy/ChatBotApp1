@@ -1,7 +1,11 @@
 
 .react-chatbot-kit-chat-container {
     width: 800px;
+   margin: 30px;
+    
   }
+
+ 
   
   .react-chatbot-kit-chat-bot-message {
     margin-left: 10px;
@@ -9,6 +13,10 @@
   
   .react-chatbot-kit-chat-bot-message {
     background-color: #61045F;
+    outline: none;
+    border: none;
+    width: 350px;
+    font-size: 16px;
   }
   
   .react-chatbot-kit-chat-bot-message-arrow {
@@ -23,8 +31,8 @@
 
   .chat-container{
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
+     color: aliceblue;
     height: 100vh;
     width: 100vw;
     background: #AA076B;
@@ -34,4 +42,26 @@
     background: linear-gradient(to right, #61045F, #AA076B);
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   }
+
+  .chatbot-main-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+   
+  }
+
+  
+  @media screen and (max-width:876px){
+    .react-chatbot-kit-chat-container{
+      width: 500px;
+      margin: 20px;
+    }
+    .react-chatbot-kit-chat-bot-message{
+     max-width: 200px;
+    }
+    
+  }
+
   

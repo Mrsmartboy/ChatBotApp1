@@ -5,7 +5,7 @@ const FamilyProblems=(props)=>{
   
     // const data = questions.map(eachItem=>(eachItem.question))
      return (
-       <ol className="list-container">
+       <ol className="list-container-family">
          {questions.map(eachItem=>(
            <li key={eachItem.id} className="family-list-items">{eachItem.answer}</li>
          ))}

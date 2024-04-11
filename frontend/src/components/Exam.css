@@ -1,0 +1,14 @@
+
+.list-container-exam{
+justify-content: flex-start;
+flex-direction: column;
+width: 70%;
+}
+
+.exam-list-items{
+ font-weight: 500;
+margin: 5px;
+color: black;
+list-style-type:decimal;
+
+}

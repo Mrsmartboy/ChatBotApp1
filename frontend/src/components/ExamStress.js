@@ -1,3 +1,4 @@
+import './Exam.css'
 
 
 const ExamStress = (props) => {
@@ -6,11 +7,11 @@ const ExamStress = (props) => {
     // const data = questions.map(eachItem=>(eachItem.question))
    
      return (
-       <ul>
+       <ol className="list-container-exam">
          {questions.map(eachItem=>(
-           <li key={eachItem.id}>{eachItem.question}</li>
+           <li key={eachItem.id} className="exam-list-items">{eachItem.answer}</li>
          ))}
-       </ul>
+       </ol>
    
    
      )

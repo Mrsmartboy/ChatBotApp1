@@ -1,0 +1,15 @@
+
+
+.list-container-finance{
+    justify-content: flex-start;
+    flex-direction: column;
+    width: 70%;
+}
+
+.finance-list-items{
+ font-weight: 500;
+margin: 5px;
+color: black;
+list-style-type: decimal;
+padding-left: 0px;
+}

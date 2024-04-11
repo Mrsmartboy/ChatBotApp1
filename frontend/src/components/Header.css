@@ -1,7 +1,13 @@
 .header {
     background-color: #333;
     color: #fff;
-    padding: 10px 0;
+    height: 8vh;
+    padding-bottom: 20px;
+    padding-top: 5px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+
   }
   
   .nav-links {
@@ -17,9 +23,36 @@
     text-decoration: none;
     color: #fff;
     padding: 0 20px;
+    font-size: 18px;
+    font-weight: bold;
+    font-family: cursive;
+   
+
   }
   
   .nav-link:hover {
-    color: #ddd;
+    color: #fab107;
+    text-decoration: underline;
+    
+  }
+
+  .logout-button{
+    background-color: cornflowerblue;
+    width: 90px;
+    font-size: 18px;
+    font-weight: bold;
+    font-family: cursive;
+    border: none;
+    outline: none;
+   border-radius: 20px;
+   color: #fff;
+   padding: 8px;
+   cursor: pointer;
+  }
+
+  .logout-button:hover{
+    background-color: #fab107;
+
   }
   
+
